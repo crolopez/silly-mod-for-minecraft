@@ -1,7 +1,6 @@
 package com.cristofiumod.entities;
 
 import com.cristofiumod.init.ModEntityType;
-import com.cristofiumod.utils.RegisterHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
@@ -11,8 +10,6 @@ import net.minecraft.entity.monster.CreeperEntity;
 import net.minecraft.entity.monster.SpiderEntity;
 import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.CatEntity;
-import net.minecraft.entity.passive.OcelotEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;

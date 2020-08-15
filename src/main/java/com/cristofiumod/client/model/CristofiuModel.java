@@ -3,11 +3,9 @@ package com.cristofiumod.client.model;
 import com.cristofiumod.entities.CristofiuEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelHelper;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.util.HandSide;
 import net.minecraft.util.math.MathHelper;
 
 public class CristofiuModel <T extends CristofiuEntity> extends EntityModel<T> {

@@ -1,4 +1,5 @@
 {
-  "item.cristofiumod.cachimba": "Cachimba",
-  "entity.cristofiumod.cristofiu": "Cristofiu"
+  "entity.cristofiumod.cristofiu": "Cristofiu",
+  "block.cristofiumod.cachimba": "Cachimba",
+  "itemGroup.cristofiu_mod_tab": "Cristofiu Mod"
 }

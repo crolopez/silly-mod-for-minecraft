@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cristofiumod:block/cachimba", "y":  180},
+    "facing=south": { "model": "cristofiumod:block/cachimba"},
+    "facing=west": { "model": "cristofiumod:block/cachimba", "y":  90},
+    "facing=east": { "model": "cristofiumod:block/cachimba", "y":  270}
+  }
+}
