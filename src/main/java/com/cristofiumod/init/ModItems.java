@@ -16,6 +16,7 @@ public class ModItems {
     }
 
     // Items
+    public static final RegistryObject<Item> CACHIMBA_MANGUERA_BLOCK = registerCachimbaMangueraItem();
 
     // Block items
     public static final RegistryObject<Item> CACHIMBA_BLOCK = registerCachimbaBlock();
@@ -24,5 +25,9 @@ public class ModItems {
     private static RegistryObject<Item> registerCachimbaBlock() {
         return ITEMS.register(ModBlocks.CACHIMBA_ID,
                 () -> new BlockItem(ModBlocks.CACHIMBA_BLOCK.get(), new Item.Properties().group(CristofiuMod.TAB)));
+    }
+
+    private static RegistryObject<Item> registerCachimbaMangueraItem() {
+        return ITEMS.register("cachimba_manguera", () -> new Item(new Item.Properties().group(CristofiuMod.TAB)));
     }
 }

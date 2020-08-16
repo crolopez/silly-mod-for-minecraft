@@ -1,6 +1,7 @@
 package com.cristofiumod.entities;
 
 import com.cristofiumod.init.ModEntityType;
+import com.cristofiumod.init.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
@@ -23,7 +24,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class CristofiuEntity extends AnimalEntity {
 
-    private static final Ingredient TEMPTATION_ITEMS = Ingredient.fromItems(Items.RED_WOOL);
+    private static final Ingredient TEMPTATION_ITEMS = Ingredient.fromItems(ModItems.CACHIMBA_BLOCK.get());
 
     private EatGrassGoal eatGrassGoal;
     private int hogTimer;
@@ -42,15 +43,18 @@ public class CristofiuEntity extends AnimalEntity {
         super.registerGoals();
         this.eatGrassGoal = new EatGrassGoal(this);
         setEntitiesToAvoid(0, 6.0F, 1.0F, 3.0F);
+        this.goalSelector.addGoal(1, new TemptGoal(this, 1.1D, TEMPTATION_ITEMS, false));
+        this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
+        this.goalSelector.addGoal(3, this.eatGrassGoal);
+        this.goalSelector.addGoal(4, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+        this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
+
+        /*
         this.goalSelector.addGoal(1, new SwimGoal(this));
         this.goalSelector.addGoal(2, new PanicGoal(this, 1.25D));
         this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.1D, TEMPTATION_ITEMS, false));
         this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1D));
-        this.goalSelector.addGoal(6, this.eatGrassGoal);
-        this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-        this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 6.0F));
-        this.goalSelector.addGoal(9, new LookRandomlyGoal(this));
+        */
     }
 
     @Override

@@ -2,21 +2,26 @@ package com.cristofiumod.blocks;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 
 import java.util.stream.Stream;
 
-public class CachimbaBlock extends BreakableBlock {
+public class CachimbaBlock extends Block {
 
     private static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
     private static final VoxelShape SHAPE_N = getCachimbaNorthShapes();
@@ -25,7 +30,7 @@ public class CachimbaBlock extends BreakableBlock {
     private static final VoxelShape SHAPE_W = getCachimbaWestShapes();
 
     public CachimbaBlock() {
-        super(AbstractBlock.Properties.create(Material.GLASS)
+        super(Block.Properties.create(Material.WOOD)
                 .hardnessAndResistance(0.5F)
                 .sound(SoundType.GLASS));
     }
@@ -68,6 +73,19 @@ public class CachimbaBlock extends BreakableBlock {
     @Override
     public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
         return 1.0F;
+    }
+
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+        int health = player.getFoodStats().getFoodLevel();
+        player.getFoodStats().addStats(health >= 6 ? 6 - health : -1, 6F);
+        player.addPotionEffect(new EffectInstance(Effects.HUNGER, 1300, 0));
+        player.addPotionEffect(new EffectInstance(Effects.NAUSEA, 1200, 0));
+        player.addPotionEffect(new EffectInstance(Effects.LEVITATION, 800, 0));
+        player.addPotionEffect(new EffectInstance(Effects.BLINDNESS, 1100, 0));
+        player.addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, 900, 0));
+        player.playSound(SoundEvents.ENTITY_ENDER_DRAGON_GROWL, this.soundType.getVolume() * 0.5F, this.soundType.getPitch() * 0.75F);
+
+        return ActionResultType.SUCCESS;
     }
 
     // Vortex shapes

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "L I",
+    "L L",
+    "LLL"
+  ],
+
+  "key":
+  {
+    "L":
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "I":
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "cristofiumod:cachimba_manguera",
+    "count": 1
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    " I",
+    "HB",
+    " C"
+  ],
+
+  "key":
+  {
+    "B":
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "C":
+    {
+      "item": "minecraft:blue_stained_glass"
+    },
+    "H":
+    {
+      "item": "cristofiumod:cachimba_manguera"
+    },
+    "I":
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "cristofiumod:cachimba",
+    "count": 1
+  }
+}
