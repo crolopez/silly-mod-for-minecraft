@@ -20,6 +20,7 @@ public class CristofiuModel <T extends CristofiuEntity> extends EntityModel<T> {
     private final ModelRenderer rightArm;
 
     public CristofiuModel() {
+
         textureWidth = 64;
         textureHeight = 64;
 
@@ -35,7 +36,6 @@ public class CristofiuModel <T extends CristofiuEntity> extends EntityModel<T> {
         neck2 = new ModelRenderer(this);
         neck2.setRotationPoint(0.0F, -3.0F, 2.0F);
         neck.addChild(neck2);
-        setRotationAngle(neck2, 0.0F, 0.0F, 0.0F);
         neck2.setTextureOffset(34, 57).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 3.0F, 2.0F, 0.0F, false);
 
         neck3 = new ModelRenderer(this);
@@ -61,11 +61,13 @@ public class CristofiuModel <T extends CristofiuEntity> extends EntityModel<T> {
         rightArm = new ModelRenderer(this);
         rightArm.setRotationPoint(-6.0F, -4.0F, 0.0F);
         body.addChild(rightArm);
+        setRotationAngle(rightArm, 0.0F, 0.0F, 0.4363F);
         rightArm.setTextureOffset(32, 48).addBox(-2.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
 
         leftArm = new ModelRenderer(this);
         leftArm.setRotationPoint(6.0F, -4.0F, 0.0F);
         body.addChild(leftArm);
+        setRotationAngle(leftArm, 0.0F, 0.0F, -0.4363F);
         leftArm.setTextureOffset(40, 19).addBox(-2.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, 0.0F, false);
     }
 

@@ -2,5 +2,8 @@
   "entity.cristofiumod.cristofiu": "Cristofiu",
   "block.cristofiumod.cachimba": "Cachimba",
   "item.cristofiumod.cachimba_manguera": "Manguera de cachimba",
+  "item.cristofiumod.hueso_melocoton": "Hueso de melocotón",
+  "item.cristofiumod.melocoton": "Melocotón",
+  "item.cristofiumod.espada_melocoton": "Espada de melocotón",
   "itemGroup.cristofiu_mod_tab": "Cristofiu Mod"
 }

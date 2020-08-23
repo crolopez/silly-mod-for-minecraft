@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "M"
+  ],
+
+  "key":
+  {
+    "M":
+    {
+      "item": "cristofiumod:melocoton"
+    }
+  },
+  "result":
+  {
+    "item": "cristofiumod:hueso_melocoton",
+    "count": 1
+  }
+}
